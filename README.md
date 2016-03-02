@@ -22,11 +22,13 @@ Vibration.navigator##(vibrate x)
 
 and to use a pattern (see [the official documentation](https://github.com/apache/cordova-plugin-vibration))
 ```OCaml
-% Vibrate 1 second
-% Wait for 1 second
-% Vibrate 3 seconds
-% Wait for 1 second
-% Vibrate 5 seconds
+(*
+ * Vibrate 1 second
+ * Wait for 1 second
+ * Vibrate 3 seconds
+ * Wait for 1 second
+ * Vibrate 5 seconds
+*)
 
 let int_array : int Js.array Js.t = new%js Js.array_length 4 in
 Js.array_set int_array 0 1000;
