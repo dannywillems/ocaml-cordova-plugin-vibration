@@ -17,7 +17,7 @@ This plugin provides a way to vibrate the device.
 
 To vibrate the device for x millisecondes, use
 ```OCaml
-Vibration.navigator##(vibrate x)
+Vibration.vibration##(vibrate x)
 ```
 
 and to use a pattern (see [the official documentation](https://github.com/apache/cordova-plugin-vibration))
@@ -36,7 +36,7 @@ Js.array_set int_array 1 1000;
 Js.array_set int_array 2 3000;
 Js.array_set int_array 3 1000;
 Js.array_set int_array 4 5000;
-Vibration.navigator##(vibrate_pattern int_array)
+Vibration.vibration##(vibrate_pattern int_array)
 ```
 **new%js uses ppx ! Don't forget to compile with -package js_of_ocaml.ppx !**
 
