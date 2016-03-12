@@ -42,3 +42,26 @@ Vibration.vibration##(vibrate_pattern int_array)
 
 If you want to play Imperial March or Mario Bross Theme, see [this
 repository](https://github.com/dannywillems/ocaml-cordova-plugin-vibration-example).
+
+## ! BE CAREFUL !
+
+The plugin creates a new object called *navigator.vibration*, but the object is
+available when the *deviceready* event is handled.
+
+We don't provide a *navigator.vibration* variable in this plugin (as said in the official
+documentation on js_of_ocaml). If we did, *navigator.vibration* will be set to **undefined**
+because the *navigator.vibration* object doesn't exist when we create the variable.
+
+Instead, we provide a function *vibration* of type *unit -> vibration Js.t* which creates the
+binding to the *navigator.vibration* object. You must call it when the deviceready
+event is handled, eg
+
+```OCaml
+let on_device_ready =
+  let v = Vibration.vibration () in
+  (* Some code *)
+
+let _ =
+  Dom.addEventListener Dom_html.document (Dom.Event.make "deviceready")
+  (Dom_html.handler on_device_ready) Js._false
+```
