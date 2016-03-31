@@ -57,7 +57,7 @@ binding to the *navigator.vibration* object. You must call it when the devicerea
 event is handled, eg
 
 ```OCaml
-let on_device_ready =
+let on_device_ready _ =
   let v = Vibration.vibration () in
   (* Some code *)
 
