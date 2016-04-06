@@ -1,5 +1,7 @@
 # ocaml-cordova-plugin-vibration
 
+* gen_js_api (master branch): [![Build Status](https://travis-ci.org/dannywillems/ocaml-cordova-plugin-vibration.svg?branch=master)](https://travis-ci.org/dannywillems/ocaml-cordova-plugin-vibration)
+
 Binding to
 [cordova-plugin-vibration](https://github.com/apache/cordova-plugin-vibration)
 
