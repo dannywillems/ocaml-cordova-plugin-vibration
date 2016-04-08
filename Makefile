@@ -1,8 +1,4 @@
-################################################################################
-MLI_FILE		= cordova_vibration.mli
-## Name which will be used in -package with ocamlfind
-LIB_NAME		= cordova-plugin-vibration
-################################################################################
+include Makefile.conf
 
 ################################################################################
 CC				= ocamlc
