@@ -9,13 +9,36 @@ Binding to
 
 ## What does cordova-plugin-vibration do ?
 
-[cordova-plugin-vibration](https://github.com/apache/cordova-plugin-vibration)
 ```
 This plugin aligns with the W3C vibration specification
 http://www.w3.org/TR/vibration/
 
 This plugin provides a way to vibrate the device.
 ```
+Source: [cordova-plugin-vibration](https://github.com/apache/cordova-plugin-vibration)
+
+## How to install and compile your project by using this plugin ?
+
+Don't forget to switch to a compiler **>= 4.03.0**.
+```Shell
+opam switch 4.03.0
+```
+
+You can use opam by pinning the repository with
+```Shell
+opam pin add cordova-plugin-vibration https://github.com/dannywillems/ocaml-cordova-plugin-vibration.git
+```
+
+and to compile your project, use
+```Shell
+ocamlfind ocamlc -c -o [output_file] -package gen_js_api -package cordova-plugin-vibration [...] -linkpkg [other arguments]
+```
+
+Don't forget to install the cordova plugin vibration with
+```Shell
+cordova plugin add https://github.com/apache/cordova-plugin-vibration
+```
+
 
 ## How to use ?
 
