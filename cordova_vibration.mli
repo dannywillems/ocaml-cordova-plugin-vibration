@@ -5,7 +5,7 @@ class vibration : Ojs.t ->
     method vibrate            : int       -> bool
     method vibrate_pattern    : int array -> bool
     [@@js.call "vibrate"]
-    method cancel   : unit
+    method cancel             : unit      -> unit
     [@@js.call "cancel"]
   end
 (* -------------------------------------------------------------------------- *)
