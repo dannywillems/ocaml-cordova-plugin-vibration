@@ -40,13 +40,11 @@ Don't forget to install the cordova plugin vibration with
 cordova plugin add https://github.com/apache/cordova-plugin-vibration
 ```
 
-
 ## How to use ?
 
 To vibrate the device for x millisecondes, use
 ```OCaml
-let t = Cordova_vibration.t () in
-t#vibrate x
+Cordova_vibration.vibrate x
 ```
 
 and to use a pattern (see [the official documentation](https://github.com/apache/cordova-plugin-vibration))
@@ -59,7 +57,7 @@ and to use a pattern (see [the official documentation](https://github.com/apache
  * Vibrate 5 seconds
 *)
 
-t#vibrate_pattern [|1;1;3;1;5|]
+Cordova_vibration.vibrate_pattern [|1;1;3;1;5|]
 ```
 
 If you want to play Imperial March or Mario Bross Theme, see [this
