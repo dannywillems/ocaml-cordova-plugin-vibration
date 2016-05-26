@@ -1,16 +1,13 @@
-(* -------------------------------------------------------------------------- *)
-class vibration : Ojs.t ->
-  object
-    inherit Ojs.obj
-    method vibrate            : int       -> bool
-    method vibrate_pattern    : int array -> bool
-    [@@js.call "vibrate"]
-    method cancel             : unit      -> unit
-    [@@js.call "cancel"]
-  end
-(* -------------------------------------------------------------------------- *)
+val vibrate : int -> bool
+[@@js.global "navigator.vibrate"]
 
-(* -------------------------------------------------------------------------- *)
-val t : unit -> vibration
-[@@js.get "navigator"]
-(* -------------------------------------------------------------------------- *)
+val vibrate_pattern : int array -> bool
+[@@js.global "navigator.vibrate"]
+
+[@@@js.stop]
+val cancel : unit -> unit
+[@@@js.start]
+
+[@@@js.implem
+  let cancel () = ignore (vibrate 0)
+]
