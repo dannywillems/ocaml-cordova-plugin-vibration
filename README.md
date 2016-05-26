@@ -64,22 +64,3 @@ t#vibrate_pattern [|1;1;3;1;5|]
 
 If you want to play Imperial March or Mario Bross Theme, see [this
 repository](https://github.com/dannywillems/ocaml-cordova-plugin-vibration-example).
-
-## ! BE CAREFUL !
-
-The plugin creates a new object called *navigator.vibration*, but the object is
-available when the *deviceready* event is handled.
-
-We provide a function *Cordova_vibration.t* of type *unit -> Cordova_vibration* which creates the
-binding to the *navigator.vibration* object. You must call it when the deviceready
-event is handled, eg
-
-```OCaml
-let on_device_ready _ =
-  let v = Cordova_vibration.t () in
-  (* Some code *)
-
-let _ =
-  Dom.addEventListener Dom_html.document (Dom.Event.make "deviceready")
-  (Dom_html.handler on_device_ready) Js._false
-```
